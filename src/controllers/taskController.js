@@ -12,7 +12,7 @@ const createTask = async (req, res) => {
         res.status(201).send({
             status: 'Success',
             message: 'Task has been created',
-            data: task
+            task
         })
     } catch (error) {
         if (error.name === 'ValidationError') {
@@ -85,7 +85,7 @@ const getTaskById = async (req, res) => {
         res.status(200).send({
             status: 'Success',
             message: 'Information of task : ',
-            data: task
+            task
         })
     } catch (error) {
         res.status(500).send({
@@ -134,7 +134,7 @@ const updateTask = async (req, res) => {
         res.status(200).send({
             status: 'Success',
             message: 'Update completed task :',
-            data: task
+            task
         })
     } catch (error) {
         if (error.name === 'ValidationError') {
@@ -176,7 +176,7 @@ const deleteTask = async (req, res) => {
         res.status(200).send({
             status: 'Success',
             message: 'Task has been deleted successfully!', 
-            data: task
+            task
         })
     } catch (error) {
         res.status(500).send({

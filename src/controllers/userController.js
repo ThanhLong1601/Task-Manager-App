@@ -13,10 +13,7 @@ const loginUser = async (req, res) => {
         res.status(200).send({
             status: 'Success',
             message: 'Login Successful',
-            data: {
-                User: user,
-                Token : token
-            }
+            user, token
         })    
     } catch (error) {
         res.status(400).send({
@@ -79,8 +76,7 @@ const createUser = async (req, res) => {
         res.status(201).send({
             status: 'Success',
             message: 'User has been created',
-            data: user,
-            Token: token
+            user, token
         })
     } catch (error) {
         if (error.name === 'ValidationError') {
